@@ -1,0 +1,79 @@
+.navbar-brand {
+  margin: 0;
+  padding-left: 15px;
+  padding-top: 10px;
+  overflow: hidden;
+  background-color: #de3831;
+  width: 120px;
+  height: 70px;
+  color: white;
+  font-size: 20px;
+  border-right: 1px solid #fff;
+  position: relative;
+  z-index: 9999;
+}
+
+.details {
+  list-style-type: none;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  background-color: #000;
+  justify-content: space-between;
+}
+
+.info {
+  font-size: small;
+  margin-left: 20px;
+  margin-top: 0;
+}
+.navbar-nav {
+  display: inline-block;
+  color: white;
+  padding-left: 30px; 
+  padding-top: 30px;
+ 
+}
+#page-title {
+  display: inline-block;
+  margin-right: 800px; 
+  font-size: 20px;
+  font-weight: bold;
+}
+#current-user {
+  display: inline-block;
+  font-size: 16px;
+}
+.glyphicon {
+  font-size: 30px;
+}
+#icon {
+  padding: 15px;
+  overflow: hidden;
+  display: inline-block;
+  background-color: grey;
+  height: 70px;
+  width: 80px;
+  color: white;
+  border-left: 1px solid white;
+  border-bottom: gray;
+  border-top: gray;
+  border-right: gray;
+}
+
+/* #page-title {
+  padding-left: 40px;
+  padding-top: 60px;
+  font-size: 20px;
+  color: white;
+  
+}
+.active {
+  background-color: #e6402e;
+}
+#current-user {
+  margin-right: 60%;
+  color: white;
+  font-size: 12px;
+  
+} */

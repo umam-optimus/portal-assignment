@@ -1,0 +1,13 @@
+.mat-tab-group {
+    margin-top: 50px;
+    margin-left: 220px;
+    margin-bottom: 48px;
+    margin-right: 250px;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(231, 235, 235);
+}
+mat-tab:hover {
+    color: rgb(133, 15, 15);
+}

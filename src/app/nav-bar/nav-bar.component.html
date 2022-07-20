@@ -1,0 +1,72 @@
+<!-- <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Optimus <br><span class="sr-only">Information</span></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link1" href="#">uma.maheshwari@optimusinfo.com</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+<nav>
+  <!-- <div class="logo">
+      <li>
+        <a class="navbar-brand" href="#"
+          >Optimus <br /><span class="info">Information</span></a>
+      </li>
+    </div> -->
+  <div class="details">
+    <div>
+      <a class="navbar-brand" href="#"
+      >Optimus <br /><span class="info">Information</span></a
+    >
+    </div>
+    <!-- <ul class="navbar-nav">
+      <li><a id="page-title" href="#home">Home</a></li>
+      <span>Uma</span>
+      <li><a id="current-user" href>uma.maheshwari@optimusinfo.com</a></li>
+    </ul> -->
+    <div class="navbar-nav" [ngSwitch]="home">
+      <p id="page-title" *ngSwitchCase="'Applications'">{{applications}}</p>
+      <p id="page-title" *ngSwitchCase="'WorkItems'">{{workItems}}</p>
+      <p id="page-title" *ngSwitchCase="'Policies'">{{policies}}</p>
+      <p id="page-title" *ngSwitchCase="'SupportTicket'">{{supportTicket}}</p>
+      <p id="page-title" *ngSwitchDefault="'Home'">{{home}}</p>
+      <p id="current-user">uma.maheshwari@optimusinfo.com</p>
+    </div>
+
+    <button type="button" id="icon" class="glyphicon glyphicon-cog"></button>
+  </div>
+</nav>
+<!-- <div class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="logo">
+      <a href="#" class="navbar-brand">Optimus<br /><span>Information</span></a>
+    </div>
+       
+      
+   
+    <span class="page-title"><h3 class="mt-2 pt-1">Home</h3></span>
+    <span class="current-user">uma.maheshwari@optimusinfo.com</span>
+    <button type="button" id="icon" class="glyphicon glyphicon-cog fa-5x"></button>
+  </div>
+ </div>
+ <div class = "container-fluid">
+  <div class = "navigation-bar" id = "nav-bar">
+    <div class = "w3-top">
+    <div class = "w3-bar w3-border w3-card-4" >
+      <a href="#" class="navbar-brand">Optimus<br /><span>Information</span></a>
+      <span class="page-title"><h3 class="mt-2 pt-1">Home</h3></span>
+      <a href = "#" class="w3-bar-item w3-button">Contact</a>
+      </div>
+    </div>
+  </div> -->
