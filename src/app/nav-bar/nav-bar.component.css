@@ -21,7 +21,10 @@
   background-color: #000;
   justify-content: space-between;
 }
-
+#content2 {
+	clear: both;
+	overflow: auto;
+}
 .info {
   font-size: small;
   margin-left: 20px;

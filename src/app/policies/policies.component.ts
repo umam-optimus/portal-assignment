@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DataSharingService } from '../data-sharing.service';
 
 @Component({
@@ -6,16 +6,14 @@ import { DataSharingService } from '../data-sharing.service';
   templateUrl: './policies.component.html',
   styleUrls: ['./policies.component.css'],
 })
-export class PoliciesComponent implements OnInit {
-  policyComponent: any = 'Policies';
-  constructor(private dataSharing: DataSharingService) {
-    this.dataSharing.SharingData.subscribe((res: any) => {
-      this.policyComponent = res;
-    });
-  }
+export class PoliciesComponent implements AfterViewInit {
 
-  onSubmit(data: any) {
-    this.dataSharing.SharingData.next(data.value);
+  constructor(private cdr: ChangeDetectorRef,private dataSharing: DataSharingService) { }
+
+  
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
+    this.dataSharing.setTitle('Policies');
+   
   }
-  ngOnInit(): void {}
 }

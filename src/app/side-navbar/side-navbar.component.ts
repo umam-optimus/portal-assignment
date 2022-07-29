@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 import { DataSharingService } from '../data-sharing.service';
 
 @Component({
@@ -8,44 +9,18 @@ import { DataSharingService } from '../data-sharing.service';
   styleUrls: ['./side-navbar.component.css']
 })
 export class SideNavbarComponent implements OnInit {
-  home: any= 'Home';
-  applications: any = 'Applications';
-  workItems: any = 'Work Items';
-  policies:any = 'Policies';
-  supportTicket:any = "Support Ticket";
-  // openSideNav = false;
-  // constructor(private titleService: Title) { }
+  title : Observable<string> | undefined;
 
-  // ngOnInit(): void {
-  // }
+  constructor(private dataSharing: DataSharingService) {  }
 
-  // pageTitle(title: string) {
-  //   this.titleService.setTitle(title);
-  // }
-  constructor(private dataSharing: DataSharingService) {
-    this.dataSharing.SharingData.subscribe((res:any) => {
-      this.applications = res;
-    })
-    this.dataSharing.SharingData.subscribe((res1: any) => {
-      this.workItems = res1;
-    });
-
-    this.dataSharing.SharingData.subscribe((res2: any) => {
-      this.policies = res2;
-    })
-
-    this.dataSharing.SharingData.subscribe((res3: any) => {
-      this.supportTicket = res3;
-    })
-
+  ngOnInit(): void { 
+    console.log("ngoninit",this.title);
+    this.title = this.dataSharing.getTitle();
+    // this.dataSharing.getTitle().subscribe(title => {
+    //   this.title = title;
+    //   console.log("title",this.title);
+    // });
   }
 
-  onSubmit(data: any) {
-    this.dataSharing.SharingData.next(data.value);
-  }
-
-
-  ngOnInit(): void {
-  }
  
 }

@@ -1,28 +1,63 @@
+<nav>
+  <div class="details">
+    <div id="content2">
+      <a class="navbar-brand" href="#"
+        >optimus <br /><span class="info">information</span></a
+      >
+    </div>
+    <div class="navbar-nav">
+      <p *ngIf="title" id="page-title">{{ title | async}}</p>
+      <p id="current-user">uma.maheshwari@optimusinfo.com</p>
+    </div>
+    <button type="button" id="icon" class="glyphicon glyphicon-cog"></button>
+  </div>
+</nav>
+
 <mat-drawer-container class="side-navbar-container">
   <mat-drawer mode="side" opened>
     <mat-nav-list class="nav-list">
-      <a id="sidenavContent1" class="sidenav-content-anchor" 
+      <a
+        id="sidenavContent1"
+        class="sidenav-content-anchor"
         [routerLink]="['home']"
-        routerLinkActive="active" (click)="onSubmit($event)"
+        routerLinkActive="active"
       >
-        <mat-icon class="material-icons sidenav-icon" > home </mat-icon>
+        <mat-icon class="material-icons sidenav-icon"> home </mat-icon>
         <span class="sidenav-path">Home</span>
       </a>
-      <a id="sidenavContent2" class="sidenav-content-anchor" [routerLink]="['applications']" (click)="onSubmit($event)">
+      <a
+        id="sidenavContent2"
+        class="sidenav-content-anchor"
+        [routerLink]="['applications']"
+      >
         <mat-icon class="material-icons sidenav-icon"> apps </mat-icon>
         <span class="sidenav-path">Applications</span>
       </a>
-      <a id="sidenavContent3" class="sidenav-content-anchor" [routerLink]="['workitems']" (click)="onSubmit($event)">
+      <a
+        id="sidenavContent3"
+        class="sidenav-content-anchor"
+        [routerLink]="['workitems']"
+      >
         <mat-icon class="material-icons sidenav-icon"> bookmarks </mat-icon>
         <span class="sidenav-path">Work Items</span>
       </a>
-      <a id="sidenavContent4" class="sidenav-content-anchor" [routerLink]="['policies']" (click)="onSubmit($event)">
+      <a
+        id="sidenavContent4"
+        class="sidenav-content-anchor"
+        [routerLink]="['policies']"
+      >
         <mat-icon class="material-icons sidenav-icon"> policy </mat-icon>
         <span class="sidenav-path">Policies</span>
-      </a> 
-      <a id="sidenavContent5" class="sidenav-content-anchor" [routerLink]="['support']" (click)="onSubmit($event)">
-        <mat-icon class="material-icons sidenav-icon"> local_activity </mat-icon>
-       <span class="sidenav-path">Support Ticket</span> 
+      </a>
+      <a
+        id="sidenavContent5"
+        class="sidenav-content-anchor"
+        [routerLink]="['support']"
+      >
+        <mat-icon class="material-icons sidenav-icon">
+          local_activity
+        </mat-icon>
+        <span class="sidenav-path">Support Ticket</span>
       </a>
     </mat-nav-list>
   </mat-drawer>
@@ -30,4 +65,4 @@
 <div>
   <router-outlet></router-outlet>
 </div>
-<app-home></app-home>
+

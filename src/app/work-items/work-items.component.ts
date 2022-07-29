@@ -7,16 +7,10 @@ import { DataSharingService } from '../data-sharing.service';
   styleUrls: ['./work-items.component.css'],
 })
 export class WorkItemsComponent implements OnInit {
-  workItems: any = 'Work Items';
-  constructor(private dataSharing: DataSharingService) {
-    this.dataSharing.SharingData.subscribe((res: any) => {
-      this.workItems = res;
-    });
-  }
+ 
+  constructor(private dataSharing: DataSharingService) {}
 
-  onSubmit(data: any) {
-    this.dataSharing.SharingData.next(data.value);
+  ngOnInit(): void {
+    this.dataSharing.setTitle('Work Items');
   }
-
-  ngOnInit(): void {}
 }

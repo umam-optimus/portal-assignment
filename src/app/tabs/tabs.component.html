@@ -1,0 +1,126 @@
+<!-- <div class="parent">
+  <div id="parent_div_1">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="My Tickets"></mat-tab>
+      <mat-tab label="Assigned Tickets"></mat-tab>
+      <mat-tab label="Department"></mat-tab>
+    </mat-tab-group>
+  </div>
+  
+  <div id="parent_div_2">
+    <button id="support-ticket-btn">Create Support Ticket</button>
+  </div>
+</div> -->
+
+
+<!-- <div class="flex-container">
+  <div class="flex1">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="My Tickets"></mat-tab>
+      <mat-tab label="Assigned Tickets"></mat-tab>
+      <mat-tab label="Department"></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="flex2">
+    <button id="support-ticket-btn">Create Support Ticket</button>
+  </div>
+</div> -->
+
+<div class="main-container">
+  <form class="example-form">
+    <div>
+      <mat-form-field class="example-full-width" id="support-ticket-input">
+        <span matPrefix> </span>
+        <input
+          type="tel"
+          matInput
+          placeholder="Search Support Ticket..."
+          name="search"
+          [(ngModel)]="search"
+        />
+        <button id="search-btn" matSuffix mat-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" id="dropdown">
+        <mat-label>Status</mat-label>
+        <select matNativeControl id="mySelectId">
+          <option value="" disabled selected>Status</option>
+          <option value="All">All</option>
+          <option value="Open">Open</option>
+          <option value="InProgress">InProgress</option>
+          <option value="Closed">Closed</option>
+        </select>
+      </mat-form-field>
+      <!-- <mat-form-field appearance="fill" id="dropdown">
+        <mat-label>Department</mat-label>
+        <select matNativeControl id="mySelectId">
+          <option value="" disabled selected>Department</option>
+          <option value="All">All</option>
+          <option value="Open">YVR Admin and Logistic Support</option>
+          <option value="InProgress">Optimus Noida IT Support</option>
+          <option value="Closed">Optimus Noida Admin Support</option>
+          <option value="Closed">Azure Client Support</option>
+        </select>
+      </mat-form-field> -->
+      <div class="mt-5 row">
+        <div class="col-md-12">
+          <div class="table-responsive-md">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef>Subject</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.position }}
+                </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>From</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.weight }}
+                </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef>Sent</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.symbol }}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="Pagination" id="block_container">
+            <div class="total-records" id="total-record">
+              TotalRecords: <span>0</span>
+            </div>
+            <div class="render-pages" id="pagination-btn">
+              <button id="prev-btn">prev</button>
+              <span class="pages"></span>
+              <button id="next-btn">next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

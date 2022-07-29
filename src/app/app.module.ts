@@ -15,9 +15,16 @@ import { ApplicationsComponent } from './applications/applications.component';
 import { WorkItemsComponent } from './work-items/work-items.component';
 import { PoliciesComponent } from './policies/policies.component';
 import { SupportTicketComponent } from './support-ticket/support-ticket.component';
-import { MatTabsModule } from '@angular/material/tabs'; 
-
-
+import { MatTabsModule } from '@angular/material/tabs';
+import { TabsComponent } from './tabs/tabs.component'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table'  
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { AssignedTicketsTabComponent } from './assigned-tickets-tab/assigned-tickets-tab.component';
+import { DepartmentTabComponent } from './department-tab/department-tab.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +35,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     ApplicationsComponent,
     WorkItemsComponent,
     PoliciesComponent,
-    SupportTicketComponent
+    SupportTicketComponent,
+    TabsComponent,
+    AssignedTicketsTabComponent,
+    DepartmentTabComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,13 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatTableModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
